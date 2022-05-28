@@ -1,0 +1,94 @@
+body {
+  background-color: #e3f6f5;
+  padding: 20px;
+  border: 1px solid #3baea0;
+  border-radius: 20px;
+  margin: 50px;
+}
+
+.card {
+  background-color: #e3f6f5;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  border-color: #3baea0;
+  margin-bottom: 25px;
+}
+
+.list-group-item {
+  background-color: #e3f6f5;
+  color: #118a7e;
+}
+
+input {
+  background-color: #e3f6f5;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-left: 35px;
+  border-radius: 5px;
+  padding: 6px 12px;
+  position: relative;
+  width: 500px;
+  border-color: #3baea0;
+  text-align: center;
+}
+
+.card-text {
+  text-align: center;
+  color: #118a7e;
+}
+
+.card-head {
+  text-align: center;
+  color: #118a7e;
+}
+
+.card-body {
+  text-align: center;
+}
+
+.day-emoji {
+  font-size: 50px;
+}
+
+.weekday {
+  color: #118a7e;
+}
+
+.day-temperature {
+  color: #118a7e;
+}
+
+.card-title {
+  color: #118a7e;
+}
+
+footer {
+  text-align: center;
+  opacity: 0.6;
+}
+
+h6 {
+  opacity: 0.6;
+}
+
+.units {
+  position: relative;
+  top: -9px;
+  right: auto;
+  font-size: 17px;
+}
+
+a {
+  text-decoration: none;
+}
+
+form {
+  text-align: center;
+}
+
+.des {
+  color: #3baea0;
+  text-transform: capitalize;
+}
