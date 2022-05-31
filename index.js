@@ -56,8 +56,8 @@ function showTemperature(response) {
   wind.innerHTML = `💨 Wind: ${speed}km/h`;
 
   let suntime = document.querySelector("#sunrise");
-  let sun = response.data.sys.sunrise;
-  suntime.innerHTML = `🌅 Sunrise: ${sun}`;
+  let sun = new Date(response.data.sys.sunrise * 1000);
+  suntime.innerHTML = `🌅 Sunrise: ${sun.getHours()}:${sun.getMinutes()}`;
 
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
