@@ -81,13 +81,26 @@ function displayFahrenheitTemperature(event) {
   event.preventDefault();
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   let temperatureElement = document.querySelector("#current");
+  celsiuslink.classList.remove("active");
+  fahrenheitlink.classList.add("active");
   temperatureElement.innerHTML = `${Math.round(fahrenheitTemperature)}°F`;
+}
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  celsiuslink.classList.add("active");
+  fahrenheitlink.classList.remove("active");
+  let temperatureElement = document.querySelector("#current");
+  temperatureElement.innerHTML = `${Math.round(celsiusTemperature)}°C`;
 }
 
 let celsiusTemperature = null;
 
 let fahrenheitlink = document.querySelector("#fahrenheit");
 fahrenheitlink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiuslink = document.querySelector("#celsius");
+celsiuslink.addEventListener("click", displayCelsiusTemperature);
 
 let searchEngine = document.querySelector("#search-form");
 searchEngine.addEventListener("submit", search);
