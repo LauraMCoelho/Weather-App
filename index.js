@@ -55,6 +55,10 @@ function showTemperature(response) {
   let wind = document.querySelector("#speed");
   let speed = Math.round(response.data.wind.speed);
   wind.innerHTML = `💨 Wind: ${speed}km/h`;
+
+  let suntime = document.querySelector("#sunrise");
+  let sun = response.data.sys.sunrise;
+  suntime.innerHTML = `🌅 Sunrise: ${sun}`;
 }
 
 function search(event) {
