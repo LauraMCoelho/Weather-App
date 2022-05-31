@@ -7,7 +7,6 @@ let date = now.getDate();
 let hours = now.getHours();
 let minutes = now.getMinutes();
 minutes = minutes <= 9 ? "0" + minutes : minutes;
-let year = now.getFullYear();
 
 let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 let day = days[now.getDay()];
@@ -28,11 +27,11 @@ let months = [
 ];
 let month = months[now.getMonth()];
 
-h6.innerHTML = `${day}, ${month} ${date}, ${hours}:${minutes}, ${year}`;
+h6.innerHTML = `${day}, ${month} ${date}, ${hours}:${minutes}`;
 
 function showTemperature(response) {
-  let temperature = Math.round(response.data.main.temp);
   console.log(response.data);
+  let temperature = Math.round(response.data.main.temp);
 
   let temperatureElement = document.querySelector("#current");
   temperatureElement.innerHTML = `${temperature}°C`;
@@ -59,6 +58,12 @@ function showTemperature(response) {
   let suntime = document.querySelector("#sunrise");
   let sun = response.data.sys.sunrise;
   suntime.innerHTML = `🌅 Sunrise: ${sun}`;
+
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function search(event) {
