@@ -64,6 +64,8 @@ function showTemperature(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+
+  celsiusTemperature = response.data.main.temp;
 }
 
 function search(event) {
@@ -74,6 +76,18 @@ function search(event) {
 
   axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
 }
+
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  let temperatureElement = document.querySelector("#current");
+  temperatureElement.innerHTML = `${Math.round(fahrenheitTemperature)}°F`;
+}
+
+let celsiusTemperature = null;
+
+let fahrenheitlink = document.querySelector("#fahrenheit");
+fahrenheitlink.addEventListener("click", displayFahrenheitTemperature);
 
 let searchEngine = document.querySelector("#search-form");
 searchEngine.addEventListener("submit", search);
