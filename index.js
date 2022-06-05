@@ -29,6 +29,33 @@ let month = months[now.getMonth()];
 
 h6.innerHTML = `${day}, ${month} ${date}, ${hours}:${minutes}`;
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = "";
+  let days2 = ["MON", "TUE", "WED", "THU", "FRI", "SAT"];
+  days2.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-sm-2">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="weekday">${day}</h5>
+              <p class="day-emoji" >
+                ⛅ 
+              </p> 
+              <p class="day-temperature" >
+                8°C / 19°C
+              </p>    
+            </div>
+          </div>
+        </div>`;
+  });
+
+  forecastHTML = forecastHTML;
+
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function showTemperature(response) {
   console.log(response.data);
   let temperature = Math.round(response.data.main.temp);
@@ -104,3 +131,5 @@ celsiuslink.addEventListener("click", displayCelsiusTemperature);
 
 let searchEngine = document.querySelector("#search-form");
 searchEngine.addEventListener("submit", search);
+
+displayForecast();
