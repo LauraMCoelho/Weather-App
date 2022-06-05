@@ -25,12 +25,11 @@ input {
   background-color: #e3f6f5;
   margin-top: 25px;
   margin-bottom: 25px;
-  margin-left: 35px;
+  margin-left: 5px;
   border-radius: 5px;
   padding: 6px 12px;
   position: relative;
   width: 500px;
-  border-color: #3baea0;
   text-align: center;
 }
 
