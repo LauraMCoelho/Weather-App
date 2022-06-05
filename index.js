@@ -29,11 +29,12 @@ let month = months[now.getMonth()];
 
 h6.innerHTML = `${day}, ${month} ${date}, ${hours}:${minutes}`;
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = "";
-  let days2 = ["MON", "TUE", "WED", "THU", "FRI", "SAT"];
-  days2.forEach(function (day) {
+  let days = ["MON", "TUE", "WED", "THU", "FRI", "SAT"];
+  days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
       `<div class="col-sm-2">
@@ -140,5 +141,3 @@ celsiuslink.addEventListener("click", displayCelsiusTemperature);
 
 let searchEngine = document.querySelector("#search-form");
 searchEngine.addEventListener("submit", search);
-
-displayForecast();
