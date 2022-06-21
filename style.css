@@ -98,11 +98,6 @@ form {
   margin: 0 auto;
 }
 
-.active {
-  color: #6f797b;
-  cursor: default;
-}
-
 .active:hover {
   text-decoration: none;
 }
